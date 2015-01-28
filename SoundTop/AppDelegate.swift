@@ -13,9 +13,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var currentAlbumArt : String?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        STSoundCloudPlaylist().fetchPlaylist("https://soundcloud.com/tommcdonald/sets/c-o-s-v", success: { (tracks: [Dictionary<String, AnyObject>]) in
-            if let artwork = tracks[0]["artwork_url"] as? String {
-                self.currentAlbumArt = artwork.stringByReplacingOccurrencesOfString("large", withString: "t500x500")
+        STSoundCloudPlaylist().fetchPlaylist("https://soundcloud.com/tommcdonald/sets/c-o-s-v", success: { (tracks: [STTrack]) in
+            if(tracks.count > 0) {
+                self.currentAlbumArt = tracks[0].artworkURL!.stringByReplacingOccurrencesOfString("large", withString: "t500x500")
                 NSNotificationCenter.defaultCenter().postNotificationName("newAlbumArt", object: nil)
             }
         })
