@@ -704,6 +704,10 @@
                             <constraint firstAttribute="trailing" secondItem="l3q-Gm-Bi9" secondAttribute="trailing" id="nun-EN-Id2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumView" destination="l3q-Gm-Bi9" id="tJg-mZ-N8W"/>
+                        <outlet property="songVisualEffectView" destination="ryz-ns-I2b" id="yv7-dz-8XL"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
