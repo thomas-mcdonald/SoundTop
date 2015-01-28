@@ -11,6 +11,7 @@
 		E226AE6D1A79712300D2B38C /* STUpcomingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE6C1A79712300D2B38C /* STUpcomingTableViewController.swift */; };
 		E226AE6F1A79716500D2B38C /* STUpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE6E1A79716500D2B38C /* STUpcomingTableViewCell.swift */; };
 		E226AE721A7971D600D2B38C /* STTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE711A7971D600D2B38C /* STTrack.swift */; };
+		E226AE741A79796600D2B38C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E226AE731A79796600D2B38C /* AVFoundation.framework */; };
 		E2FBF62C1A77E369004B46A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */; };
 		E2FBF62E1A77E369004B46A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FBF62D1A77E369004B46A1 /* ViewController.swift */; };
 		E2FBF6301A77E369004B46A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FBF62F1A77E369004B46A1 /* Images.xcassets */; };
@@ -36,6 +37,7 @@
 		E226AE6C1A79712300D2B38C /* STUpcomingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUpcomingTableViewController.swift; sourceTree = "<group>"; };
 		E226AE6E1A79716500D2B38C /* STUpcomingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		E226AE711A7971D600D2B38C /* STTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTrack.swift; sourceTree = "<group>"; };
+		E226AE731A79796600D2B38C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E2FBF6261A77E369004B46A1 /* SoundTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FBF62A1A77E369004B46A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E226AE741A79796600D2B38C /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +90,7 @@
 		E2FBF61D1A77E369004B46A1 = {
 			isa = PBXGroup;
 			children = (
+				E226AE731A79796600D2B38C /* AVFoundation.framework */,
 				E2FBF6281A77E369004B46A1 /* SoundTop */,
 				E2FBF63B1A77E369004B46A1 /* SoundTopTests */,
 				E2FBF6271A77E369004B46A1 /* Products */,

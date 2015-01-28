@@ -23,9 +23,10 @@ class STSoundCloudPlaylist: NSObject {
             if let json = jsonOption as? Dictionary<String, AnyObject> {
                 if let tracks = json["tracks"] as? [Dictionary<String, AnyObject>] {
                     for track in tracks {
-                        var artworkURL : NSString?
-                        var artist : NSString?
-                        var title : NSString?
+                        var artworkURL: NSString?
+                        var artist: NSString?
+                        var title: NSString?
+                        var streamURL: NSString?
 
                         if let jsonurl = track["artwork_url"] as? String {
                             artworkURL = jsonurl
@@ -38,7 +39,10 @@ class STSoundCloudPlaylist: NSObject {
                         if let name = track["title"] as? String {
                             title = name
                         }
-                        ts.append(STTrack(title: title, artist: artist, artworkURL: artworkURL))
+                        if let stream = track["stream_url"] as? String {
+                            streamURL = stream
+                        }
+                        ts.append(STTrack(title: title, artist: artist, artworkURL: artworkURL, streamURL: streamURL))
                     }
                 }
                 success(ts)
