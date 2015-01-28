@@ -17,6 +17,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var playerVisualEffectView : NSVisualEffectView!
     @IBOutlet weak var playerView : STPlayerView!
 
+    var mouseInsideView : Bool = false
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTrack", name: "newTrack", object: nil)
@@ -35,18 +37,21 @@ class ViewController: NSViewController {
     }
 
     override func mouseEntered(e: NSEvent) {
+        mouseInsideView = true
         songVisualEffectView.alphaValue = 1
         playerVisualEffectView.alphaValue = 1
     }
 
     override func mouseExited(e: NSEvent) {
+        mouseInsideView = false
         delay(1.0) {
-            // needs improving to add removal eg where user re-enters area
-            NSAnimationContext.beginGrouping()
-            NSAnimationContext.currentContext().duration = 0.5
-            self.songVisualEffectView.animator().alphaValue = 0
-            self.playerVisualEffectView.animator().alphaValue = 0
-            NSAnimationContext.endGrouping()
+            if(!self.mouseInsideView) {
+                NSAnimationContext.beginGrouping()
+                NSAnimationContext.currentContext().duration = 0.5
+                self.songVisualEffectView.animator().alphaValue = 0
+                self.playerVisualEffectView.animator().alphaValue = 0
+                NSAnimationContext.endGrouping()
+            }
         }
     }
 
