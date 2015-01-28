@@ -22,7 +22,6 @@ class STAlbumView: NSImageView {
     }
     
     func setup() {
-        self.enabled = true
         self.fetchImage();
     }
 
@@ -32,7 +31,6 @@ class STAlbumView: NSImageView {
 
         let request = NSURLRequest(URL: imageURL!) // TODO: unwrap optional properly
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
-            println(response.description)
             if error == nil {
                 let image : NSImage = NSImage(data: data)!
                 self.image = image
@@ -44,21 +42,13 @@ class STAlbumView: NSImageView {
         })
     }
 
-    override func mouseEntered(theEvent: NSEvent) {
-        NSLog("Mouse entered")
-    }
-    
-    override func mouseExited(theEvent: NSEvent) {
-        NSLog("Mouse exited")
-    }
-
     override func updateTrackingAreas() {
         super.updateTrackingAreas()
         if(trackingArea != nil) {
             removeTrackingArea(trackingArea!)
         }
         let opts = NSTrackingAreaOptions.MouseEnteredAndExited | NSTrackingAreaOptions.ActiveAlways
-        trackingArea = NSTrackingArea.init(rect: self.bounds, options: opts, owner: self, userInfo: nil)
+        trackingArea = NSTrackingArea.init(rect: self.bounds, options: opts, owner: nextResponder, userInfo: nil)
         addTrackingArea(trackingArea!)
     }
 }

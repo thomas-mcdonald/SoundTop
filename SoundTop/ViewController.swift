@@ -22,6 +22,12 @@ class ViewController: NSViewController {
         }
     }
 
+    override func mouseEntered(theEvent: NSEvent) {
+        NSLog("Mouse entered")
+    }
 
+    override func mouseExited(theEvent: NSEvent) {
+        NSLog("Mouse exited")
+    }
 }
 
