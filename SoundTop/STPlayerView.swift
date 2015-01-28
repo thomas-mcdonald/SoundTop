@@ -9,7 +9,7 @@
 import Cocoa
 
 class STPlayerView: NSView {
-    var playButton: NSButton!
+    var playPauseButton: NSButton!
 
     override class func requiresConstraintBasedLayout() -> Bool { return true }
 
@@ -29,18 +29,21 @@ class STPlayerView: NSView {
         self.layer = layer
         self.layerContentsRedrawPolicy = NSViewLayerContentsRedrawPolicy.OnSetNeedsDisplay
 
-        playButton = NSButton()
-        playButton.title = "\u{f04b}"
-        playButton.font = NSFont(name: "FontAwesome", size: 20)
-        playButton.bordered = false
-        playButton.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(playButton)
+        playPauseButton = NSButton()
+        playPauseButton.image = NSImage(byReferencingFile: NSBundle.mainBundle().pathForImageResource("play_b3b3b3_20.png")!)
+        playPauseButton.alternateImage = NSImage(byReferencingFile: NSBundle.mainBundle().pathForImageResource("pause_b3b3b3_20.png")!)
 
-        let viewsDict = ["playButton": playButton]
-        addConstraint(NSLayoutConstraint(item: playButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        playPauseButton.bordered = false
+        playPauseButton.imagePosition = NSCellImagePosition.ImageOnly
+        playPauseButton.setButtonType(NSButtonType.ToggleButton)
+        playPauseButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(playPauseButton)
+
+        let viewsDict = ["playPauseButton": playPauseButton]
+        addConstraint(NSLayoutConstraint(item: playPauseButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
         // layout views vertically
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-8-[playButton(==20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("[playButton(==20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-8-[playPauseButton(==20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("[playPauseButton(==20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
 
     }
 }
