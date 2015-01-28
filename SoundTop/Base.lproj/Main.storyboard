@@ -668,31 +668,41 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SoundTop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                    <view key="view" wantsLayer="YES" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="256" height="310"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3q-Gm-Bi9" customClass="STAlbumView" customModule="SoundTop" customModuleProvider="target">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3q-Gm-Bi9" customClass="STAlbumView" customModule="SoundTop" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="54" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="vmG-Jq-JtY"/>
+                                </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="QVK-JH-1R2"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhj-7a-73p">
-                                <rect key="frame" x="92" y="29" width="38" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="UT4-Vc-26O">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <visualEffectView appearanceType="vibrantDark" fixedFrame="YES" blendingMode="withinWindow" material="titlebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ryz-ns-I2b">
-                                <rect key="frame" x="0.0" y="248" width="256" height="84"/>
+                            <visualEffectView appearanceType="vibrantDark" blendingMode="withinWindow" material="light" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ryz-ns-I2b">
+                                <rect key="frame" x="0.0" y="262" width="256" height="48"/>
                                 <subviews>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YpS-mU-Y54" customClass="STSongInfoView" customModule="SoundTop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="10" width="256" height="54"/>
+                                    <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YpS-mU-Y54" customClass="STSongInfoView" customModule="SoundTop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="48"/>
                                     </customView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="YpS-mU-Y54" firstAttribute="top" secondItem="ryz-ns-I2b" secondAttribute="top" id="VIu-rm-hog"/>
+                                    <constraint firstAttribute="height" constant="48" id="bgZ-IW-xeF"/>
+                                    <constraint firstAttribute="trailing" secondItem="YpS-mU-Y54" secondAttribute="trailing" id="fqo-H1-15W"/>
+                                    <constraint firstAttribute="width" constant="256" id="mdn-fj-yA5"/>
+                                    <constraint firstItem="YpS-mU-Y54" firstAttribute="leading" secondItem="ryz-ns-I2b" secondAttribute="leading" id="ucQ-Q7-hyI"/>
+                                </constraints>
                             </visualEffectView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ryz-ns-I2b" secondAttribute="trailing" id="EDw-Zj-nLr"/>
+                            <constraint firstItem="ryz-ns-I2b" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="P9X-CQ-rcS"/>
+                            <constraint firstItem="l3q-Gm-Bi9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="VYR-I0-xSC"/>
+                            <constraint firstItem="ryz-ns-I2b" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="bJ1-Vi-3AK"/>
+                            <constraint firstItem="l3q-Gm-Bi9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="e8f-Eo-UY5"/>
+                            <constraint firstAttribute="trailing" secondItem="l3q-Gm-Bi9" secondAttribute="trailing" id="nun-EN-Id2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
