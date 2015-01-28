@@ -12,7 +12,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     var player : AVPlayer?
-    var currentAlbumArt : String?
+    var currentTrack : STTrack?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         player = AVPlayer.init()
@@ -20,8 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if(tracks.count > 0) {
                 self.player!.replaceCurrentItemWithPlayerItem(tracks[0].playerItem())
                 self.player!.play()
-                self.currentAlbumArt = tracks[0].artworkURL!.stringByReplacingOccurrencesOfString("large", withString: "t500x500")
-                NSNotificationCenter.defaultCenter().postNotificationName("newAlbumArt", object: nil)
+                self.currentTrack = tracks[0]
+                NSNotificationCenter.defaultCenter().postNotificationName("newTrack", object: nil)
             }
         })
     }

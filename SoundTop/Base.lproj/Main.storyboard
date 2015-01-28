@@ -773,6 +773,7 @@
                     </view>
                     <connections>
                         <outlet property="albumView" destination="l3q-Gm-Bi9" id="tJg-mZ-N8W"/>
+                        <outlet property="songInfoView" destination="YpS-mU-Y54" id="SnC-ym-J6x"/>
                         <outlet property="songVisualEffectView" destination="ryz-ns-I2b" id="yv7-dz-8XL"/>
                     </connections>
                 </viewController>

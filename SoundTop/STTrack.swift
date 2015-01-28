@@ -21,6 +21,12 @@ class STTrack: NSObject {
         }
     }
 
+    var largeAlbumArt : NSString? {
+        get {
+            return self.artworkURL?.stringByReplacingOccurrencesOfString("large", withString: "t500x500")
+        }
+    }
+
     init(title : NSString?, artist : NSString?, artworkURL: NSString?, streamURL: NSString?) {
         self.artworkURL = artworkURL
         self.title = title

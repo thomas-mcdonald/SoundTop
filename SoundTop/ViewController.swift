@@ -10,11 +10,12 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet weak var albumView : STAlbumView!
+    @IBOutlet weak var songInfoView : STSongInfoView!
     @IBOutlet weak var songVisualEffectView : NSVisualEffectView!
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAlbumArt", name: "newAlbumArt", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTrack", name: "newTrack", object: nil)
     }
 
     override func viewDidLoad() {
@@ -52,10 +53,12 @@ class ViewController: NSViewController {
             dispatch_get_main_queue(), closure)
     }
 
-    func updateAlbumArt() {
+    func updateTrack() {
         let delegate = NSApplication.sharedApplication().delegate as AppDelegate
-        let url = NSURL(string: delegate.currentAlbumArt!)
+        let track = delegate.currentTrack
+        let url = NSURL(string: track!.largeAlbumArt!)
         albumView.fetchImage(url!)
+        songInfoView.updateTrack(track!)
     }
 }
 

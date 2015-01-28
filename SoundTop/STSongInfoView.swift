@@ -50,4 +50,9 @@ class STSongInfoView: NSView {
         // layout views vertically
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-8-[songTitleView]-0-[songArtistView]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
     }
+
+    func updateTrack(track: STTrack) {
+        songTitleView.stringValue = track.title!
+        songArtistView.stringValue = track.artist!
+    }
 }
