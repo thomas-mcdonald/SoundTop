@@ -12,6 +12,8 @@
 		E226AE6F1A79716500D2B38C /* STUpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE6E1A79716500D2B38C /* STUpcomingTableViewCell.swift */; };
 		E226AE721A7971D600D2B38C /* STTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE711A7971D600D2B38C /* STTrack.swift */; };
 		E226AE741A79796600D2B38C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E226AE731A79796600D2B38C /* AVFoundation.framework */; };
+		E226AE771A797EF700D2B38C /* STPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE761A797EF700D2B38C /* STPlayerView.swift */; };
+		E226AE7C1A7989AE00D2B38C /* fontawesome-webfont.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = E226AE7A1A79885F00D2B38C /* fontawesome-webfont.ttf */; };
 		E2FBF62C1A77E369004B46A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */; };
 		E2FBF62E1A77E369004B46A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FBF62D1A77E369004B46A1 /* ViewController.swift */; };
 		E2FBF6301A77E369004B46A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FBF62F1A77E369004B46A1 /* Images.xcassets */; };
@@ -32,12 +34,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E226AE7B1A79899A00D2B38C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				E226AE7C1A7989AE00D2B38C /* fontawesome-webfont.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E2260D4A1A7948E800DF593D /* STSoundCloudPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STSoundCloudPlaylist.swift; sourceTree = "<group>"; };
 		E226AE6C1A79712300D2B38C /* STUpcomingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUpcomingTableViewController.swift; sourceTree = "<group>"; };
 		E226AE6E1A79716500D2B38C /* STUpcomingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		E226AE711A7971D600D2B38C /* STTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTrack.swift; sourceTree = "<group>"; };
 		E226AE731A79796600D2B38C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E226AE761A797EF700D2B38C /* STPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPlayerView.swift; sourceTree = "<group>"; };
+		E226AE7A1A79885F00D2B38C /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		E2FBF6261A77E369004B46A1 /* SoundTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FBF62A1A77E369004B46A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +104,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		E226AE751A797EDC00D2B38C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2FBF64A1A77EA57004B46A1 /* STAlbumView.swift */,
+				E2FBF64C1A77F5E5004B46A1 /* STSongInfoView.swift */,
+				E226AE761A797EF700D2B38C /* STPlayerView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E2FBF61D1A77E369004B46A1 = {
 			isa = PBXGroup;
 			children = (
@@ -111,13 +138,12 @@
 			children = (
 				E226AE701A7971BD00D2B38C /* Model */,
 				E2260D491A79486400DF593D /* SoundCloud */,
+				E226AE751A797EDC00D2B38C /* Views */,
 				E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */,
 				E2FBF62D1A77E369004B46A1 /* ViewController.swift */,
 				E2FBF62F1A77E369004B46A1 /* Images.xcassets */,
 				E2FBF6311A77E369004B46A1 /* Main.storyboard */,
 				E2FBF6291A77E369004B46A1 /* Supporting Files */,
-				E2FBF64A1A77EA57004B46A1 /* STAlbumView.swift */,
-				E2FBF64C1A77F5E5004B46A1 /* STSongInfoView.swift */,
 				E2FBF64E1A793937004B46A1 /* STInfoTextField.swift */,
 				E226AE6C1A79712300D2B38C /* STUpcomingTableViewController.swift */,
 				E226AE6E1A79716500D2B38C /* STUpcomingTableViewCell.swift */,
@@ -128,6 +154,7 @@
 		E2FBF6291A77E369004B46A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E226AE7A1A79885F00D2B38C /* fontawesome-webfont.ttf */,
 				E2FBF62A1A77E369004B46A1 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -160,6 +187,7 @@
 				E2FBF6221A77E369004B46A1 /* Sources */,
 				E2FBF6231A77E369004B46A1 /* Frameworks */,
 				E2FBF6241A77E369004B46A1 /* Resources */,
+				E226AE7B1A79899A00D2B38C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -251,6 +279,7 @@
 			files = (
 				E2FBF64F1A793937004B46A1 /* STInfoTextField.swift in Sources */,
 				E2FBF64D1A77F5E5004B46A1 /* STSongInfoView.swift in Sources */,
+				E226AE771A797EF700D2B38C /* STPlayerView.swift in Sources */,
 				E2FBF62E1A77E369004B46A1 /* ViewController.swift in Sources */,
 				E2FBF62C1A77E369004B46A1 /* AppDelegate.swift in Sources */,
 				E226AE6F1A79716500D2B38C /* STUpcomingTableViewCell.swift in Sources */,

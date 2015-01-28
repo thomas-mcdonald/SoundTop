@@ -683,15 +683,16 @@
                             <visualEffectView appearanceType="vibrantDark" blendingMode="withinWindow" material="light" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ryz-ns-I2b">
                                 <rect key="frame" x="0.0" y="442" width="256" height="48"/>
                                 <subviews>
-                                    <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YpS-mU-Y54" customClass="STSongInfoView" customModule="SoundTop" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="YpS-mU-Y54" customClass="STSongInfoView" customModule="SoundTop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="48"/>
                                     </customView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YpS-mU-Y54" secondAttribute="bottom" id="0SZ-6m-976"/>
+                                    <constraint firstAttribute="width" constant="256" id="HTX-Vj-i6w"/>
                                     <constraint firstItem="YpS-mU-Y54" firstAttribute="top" secondItem="ryz-ns-I2b" secondAttribute="top" id="VIu-rm-hog"/>
                                     <constraint firstAttribute="height" constant="48" id="bgZ-IW-xeF"/>
                                     <constraint firstAttribute="trailing" secondItem="YpS-mU-Y54" secondAttribute="trailing" id="fqo-H1-15W"/>
-                                    <constraint firstAttribute="width" constant="256" id="mdn-fj-yA5"/>
                                     <constraint firstItem="YpS-mU-Y54" firstAttribute="leading" secondItem="ryz-ns-I2b" secondAttribute="leading" id="ucQ-Q7-hyI"/>
                                 </constraints>
                             </visualEffectView>
@@ -757,6 +758,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <visualEffectView appearanceType="vibrantDark" blendingMode="withinWindow" material="light" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-KR-aYn">
+                                <rect key="frame" x="0.0" y="234" width="256" height="45"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="jMC-wa-5jo" customClass="STPlayerView" customModule="SoundTop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="45"/>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jMC-wa-5jo" firstAttribute="leading" secondItem="mJE-KR-aYn" secondAttribute="leading" id="9c5-ya-Jpm"/>
+                                    <constraint firstAttribute="height" constant="45" id="VKT-X2-Gpc"/>
+                                    <constraint firstAttribute="bottom" secondItem="jMC-wa-5jo" secondAttribute="bottom" id="caH-ap-kCO"/>
+                                    <constraint firstAttribute="trailing" secondItem="jMC-wa-5jo" secondAttribute="trailing" id="dzG-k0-NPT"/>
+                                    <constraint firstItem="jMC-wa-5jo" firstAttribute="top" secondItem="mJE-KR-aYn" secondAttribute="top" id="lo1-VJ-AuR"/>
+                                    <constraint firstAttribute="width" constant="256" id="p51-IM-4ft"/>
+                                </constraints>
+                            </visualEffectView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1EI-7K-m9H" secondAttribute="trailing" id="2zq-v2-WSD"/>
@@ -765,14 +782,19 @@
                             <constraint firstItem="1EI-7K-m9H" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="HX7-Xk-TtO"/>
                             <constraint firstItem="ryz-ns-I2b" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="P9X-CQ-rcS"/>
                             <constraint firstItem="l3q-Gm-Bi9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="VYR-I0-xSC"/>
+                            <constraint firstItem="mJE-KR-aYn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ZMK-ok-5OR"/>
                             <constraint firstAttribute="bottom" secondItem="1EI-7K-m9H" secondAttribute="bottom" id="aR7-u1-Yhk"/>
                             <constraint firstItem="ryz-ns-I2b" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="bJ1-Vi-3AK"/>
                             <constraint firstItem="l3q-Gm-Bi9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="e8f-Eo-UY5"/>
                             <constraint firstAttribute="trailing" secondItem="l3q-Gm-Bi9" secondAttribute="trailing" id="nun-EN-Id2"/>
+                            <constraint firstItem="l3q-Gm-Bi9" firstAttribute="bottom" secondItem="mJE-KR-aYn" secondAttribute="bottom" id="oEk-HU-6hd"/>
+                            <constraint firstAttribute="trailing" secondItem="mJE-KR-aYn" secondAttribute="trailing" id="qYs-KG-qOO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="albumView" destination="l3q-Gm-Bi9" id="tJg-mZ-N8W"/>
+                        <outlet property="playerView" destination="jMC-wa-5jo" id="K23-en-V8b"/>
+                        <outlet property="playerVisualEffectView" destination="mJE-KR-aYn" id="wYx-dl-1wE"/>
                         <outlet property="songInfoView" destination="YpS-mU-Y54" id="SnC-ym-J6x"/>
                         <outlet property="songVisualEffectView" destination="ryz-ns-I2b" id="yv7-dz-8XL"/>
                     </connections>

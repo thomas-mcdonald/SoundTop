@@ -28,6 +28,7 @@ class STSongInfoView: NSView {
         let layer = CALayer.init()
         self.wantsLayer = true
         self.layer = layer
+        self.layerContentsRedrawPolicy = NSViewLayerContentsRedrawPolicy.OnSetNeedsDisplay
 
         // add song title
         songTitleView.stringValue = "No Qualms"

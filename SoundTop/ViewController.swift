@@ -10,8 +10,12 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet weak var albumView : STAlbumView!
+
     @IBOutlet weak var songInfoView : STSongInfoView!
     @IBOutlet weak var songVisualEffectView : NSVisualEffectView!
+
+    @IBOutlet weak var playerVisualEffectView : NSVisualEffectView!
+    @IBOutlet weak var playerView : STPlayerView!
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -21,6 +25,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         songVisualEffectView.alphaValue = 0
+        playerVisualEffectView.alphaValue = 0
     }
 
     override var representedObject: AnyObject? {
@@ -31,6 +36,7 @@ class ViewController: NSViewController {
 
     override func mouseEntered(e: NSEvent) {
         songVisualEffectView.alphaValue = 1
+        playerVisualEffectView.alphaValue = 1
     }
 
     override func mouseExited(e: NSEvent) {
@@ -39,6 +45,7 @@ class ViewController: NSViewController {
             NSAnimationContext.beginGrouping()
             NSAnimationContext.currentContext().duration = 0.5
             self.songVisualEffectView.animator().alphaValue = 0
+            self.playerVisualEffectView.animator().alphaValue = 0
             NSAnimationContext.endGrouping()
         }
     }
