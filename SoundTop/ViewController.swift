@@ -12,6 +12,11 @@ class ViewController: NSViewController {
     @IBOutlet weak var albumView : STAlbumView!
     @IBOutlet weak var songVisualEffectView : NSVisualEffectView!
 
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAlbumArt", name: "newAlbumArt", object: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         songVisualEffectView.alphaValue = 0
@@ -47,5 +52,10 @@ class ViewController: NSViewController {
             dispatch_get_main_queue(), closure)
     }
 
+    func updateAlbumArt() {
+        let delegate = NSApplication.sharedApplication().delegate as AppDelegate
+        let url = NSURL(string: delegate.currentAlbumArt!)
+        albumView.fetchImage(url!)
+    }
 }
 

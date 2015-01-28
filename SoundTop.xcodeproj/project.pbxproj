@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2260D4B1A7948E800DF593D /* STSoundCloudPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2260D4A1A7948E800DF593D /* STSoundCloudPlaylist.swift */; };
 		E2FBF62C1A77E369004B46A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */; };
 		E2FBF62E1A77E369004B46A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FBF62D1A77E369004B46A1 /* ViewController.swift */; };
 		E2FBF6301A77E369004B46A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FBF62F1A77E369004B46A1 /* Images.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E2260D4A1A7948E800DF593D /* STSoundCloudPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STSoundCloudPlaylist.swift; sourceTree = "<group>"; };
 		E2FBF6261A77E369004B46A1 /* SoundTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FBF62A1A77E369004B46A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2260D491A79486400DF593D /* SoundCloud */ = {
+			isa = PBXGroup;
+			children = (
+				E2260D4A1A7948E800DF593D /* STSoundCloudPlaylist.swift */,
+			);
+			name = SoundCloud;
+			sourceTree = "<group>";
+		};
 		E2FBF61D1A77E369004B46A1 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		E2FBF6281A77E369004B46A1 /* SoundTop */ = {
 			isa = PBXGroup;
 			children = (
+				E2260D491A79486400DF593D /* SoundCloud */,
 				E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */,
 				E2FBF62D1A77E369004B46A1 /* ViewController.swift */,
 				E2FBF62F1A77E369004B46A1 /* Images.xcassets */,
@@ -221,6 +232,7 @@
 				E2FBF64D1A77F5E5004B46A1 /* STSongInfoView.swift in Sources */,
 				E2FBF62E1A77E369004B46A1 /* ViewController.swift in Sources */,
 				E2FBF62C1A77E369004B46A1 /* AppDelegate.swift in Sources */,
+				E2260D4B1A7948E800DF593D /* STSoundCloudPlaylist.swift in Sources */,
 				E2FBF64B1A77EA57004B46A1 /* STAlbumView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

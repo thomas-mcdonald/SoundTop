@@ -22,14 +22,12 @@ class STAlbumView: NSImageView {
     }
     
     func setup() {
-        self.fetchImage();
+        let url = NSURL(string: "https://i1.sndcdn.com/artworks-000092147250-ei0cxn-t500x500.jpg")!
+        self.fetchImage(url);
     }
 
-    func fetchImage() {
-        let imagestr = "https://i1.sndcdn.com/artworks-000092147250-ei0cxn-t500x500.jpg"
-        let imageURL = NSURL(string: imagestr)
-
-        let request = NSURLRequest(URL: imageURL!) // TODO: unwrap optional properly
+    func fetchImage(url : NSURL) {
+        let request = NSURLRequest(URL: url) // TODO: unwrap optional properly
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
             if error == nil {
                 let image : NSImage = NSImage(data: data)!
