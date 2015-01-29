@@ -9,7 +9,7 @@
 import Cocoa
 
 class STPlayerView: NSView {
-    var playPauseButton: NSButton!
+    var playPauseButton: STPlayPauseButton!
 
     override class func requiresConstraintBasedLayout() -> Bool { return true }
 
@@ -29,9 +29,7 @@ class STPlayerView: NSView {
         self.layer = layer
         self.layerContentsRedrawPolicy = NSViewLayerContentsRedrawPolicy.OnSetNeedsDisplay
 
-        playPauseButton = NSButton()
-        playPauseButton.image = NSImage(byReferencingFile: NSBundle.mainBundle().pathForImageResource("play_b3b3b3_20.png")!)
-        playPauseButton.alternateImage = NSImage(byReferencingFile: NSBundle.mainBundle().pathForImageResource("pause_b3b3b3_20.png")!)
+        playPauseButton = STPlayPauseButton()
 
         playPauseButton.bordered = false
         playPauseButton.imagePosition = NSCellImagePosition.ImageOnly
