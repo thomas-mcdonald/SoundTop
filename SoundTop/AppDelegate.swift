@@ -19,9 +19,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         STSoundCloudPlaylist().fetchPlaylist("https://soundcloud.com/tommcdonald/sets/c-o-s-v", success: { (tracks: [STTrack]) in
             if(tracks.count > 0) {
                 self.player!.replaceCurrentItemWithPlayerItem(tracks[0].playerItem())
-                //self.player!.play() disabled to not drive me crazy with bo saris
+                //self.player!.play() //disabled to not drive me crazy with bo saris
                 self.currentTrack = tracks[0]
-                //NSNotificationCenter.defaultCenter().postNotificationName("newTrack", object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("newTrack", object: nil)
+                NSNotificationCenter.defaultCenter().postNotificationName("playing", object: nil)
             }
         })
     }

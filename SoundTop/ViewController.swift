@@ -22,6 +22,8 @@ class ViewController: NSViewController {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTrack", name: "newTrack", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playing", name: "playing", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "paused", name: "paused", object: nil)
     }
 
     override func viewDidLoad() {
@@ -71,6 +73,14 @@ class ViewController: NSViewController {
         let url = NSURL(string: track!.largeAlbumArt!)
         albumView.fetchImage(url!)
         songInfoView.updateTrack(track!)
+    }
+
+    func playing() {
+        playerView.playing()
+    }
+
+    func paused() {
+        playerView.paused()
     }
 }
 
