@@ -15,14 +15,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var currentTrack : STTrack?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: "playing", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pause", name: "paused", object: nil)
+
         player = AVPlayer.init()
         STSoundCloudPlaylist().fetchPlaylist("https://soundcloud.com/tommcdonald/sets/c-o-s-v", success: { (tracks: [STTrack]) in
             if(tracks.count > 0) {
                 self.player!.replaceCurrentItemWithPlayerItem(tracks[0].playerItem())
-                //self.player!.play() //disabled to not drive me crazy with bo saris
                 self.currentTrack = tracks[0]
                 NSNotificationCenter.defaultCenter().postNotificationName("newTrack", object: nil)
-                NSNotificationCenter.defaultCenter().postNotificationName("playing", object: nil)
             }
         })
     }
@@ -31,6 +32,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    func play() {
+        self.player!.play()
+    }
 
+    func pause() {
+        self.player!.pause()
+    }
 }
 
