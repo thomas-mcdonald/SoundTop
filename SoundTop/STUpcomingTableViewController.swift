@@ -19,7 +19,7 @@ class STUpcomingTableViewController: NSObject, NSTableViewDelegate, NSTableViewD
 
     func updateData() {
         let delegate = NSApplication.sharedApplication().delegate as AppDelegate
-        tracks = delegate.trackList
+        tracks = delegate.playlist!.tracks
         tableView.reloadData()
     }
 

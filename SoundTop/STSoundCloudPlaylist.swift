@@ -11,41 +11,17 @@ import Cocoa
 class STSoundCloudPlaylist: NSObject {
     private let clientId = "027aa73b22641da241a74cfdd3c5210b"
 
-    func fetchPlaylist(playlistURL: NSString, success: ([STTrack]) -> ()) {
+    func fetchPlaylist(playlistURL: NSString, success: (STPlaylist) -> ()) {
         let url = NSURL(string: resolverURL(playlistURL))
         let request = NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response: NSURLResponse!, data: NSData!, error: NSError!) in
-            var jsonError : NSError?
-            var jsonOption: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: &jsonError)
 
-            // array for storing the track information for the playlists
-            var ts : [STTrack] = []
-            if let json = jsonOption as? Dictionary<String, AnyObject> {
-                if let tracks = json["tracks"] as? [Dictionary<String, AnyObject>] {
-                    for track in tracks {
-                        var artworkURL: NSString?
-                        var artist: NSString?
-                        var title: NSString?
-                        var streamURL: NSString?
-
-                        if let jsonurl = track["artwork_url"] as? String {
-                            artworkURL = jsonurl
-                        }
-                        if let user = track["user"] as? Dictionary<String, AnyObject> {
-                            if let username = user["username"] as? String {
-                                artist = username
-                            }
-                        }
-                        if let name = track["title"] as? String {
-                            title = name
-                        }
-                        if let stream = track["stream_url"] as? String {
-                            streamURL = stream
-                        }
-                        ts.append(STTrack(title: title, artist: artist, artworkURL: artworkURL, streamURL: streamURL))
-                    }
-                }
-                success(ts)
+            // hit callback
+            let playlist: STPlaylist? = STPlaylist(playlistData: data)
+            if(playlist == nil) {
+                // failure callback
+            } else {
+                success(playlist!)
             }
         })
     }

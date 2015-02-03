@@ -13,19 +13,19 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     var player: AVPlayer?
     var currentTrack: STTrack?
-    var trackList: [STTrack] = []
+    var playlist: STPlaylist?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: "playing", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "pause", name: "paused", object: nil)
 
         player = AVPlayer.init()
-        STSoundCloudPlaylist().fetchPlaylist("https://soundcloud.com/tommcdonald/sets/c-o-s-v", success: { (tracks: [STTrack]) in
-            self.trackList = tracks
+        STSoundCloudPlaylist().fetchPlaylist("https://soundcloud.com/tommcdonald/sets/c-o-s-v", success: { (playlist: STPlaylist) in
+            self.playlist = playlist
             NSNotificationCenter.defaultCenter().postNotificationName("newTracks", object: nil)
-            if(tracks.count > 0) {
-                self.player!.replaceCurrentItemWithPlayerItem(tracks[0].playerItem())
-                self.currentTrack = tracks[0]
+            if(playlist.tracks.count > 0) {
+                self.player!.replaceCurrentItemWithPlayerItem(playlist.tracks[0].playerItem())
+                self.currentTrack = playlist.tracks[0]
                 NSNotificationCenter.defaultCenter().postNotificationName("newTrack", object: nil)
             }
         })
