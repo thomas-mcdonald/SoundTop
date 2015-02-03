@@ -11,8 +11,9 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var player : AVPlayer?
-    var currentTrack : STTrack?
+    var player: AVPlayer?
+    var currentTrack: STTrack?
+    var trackList: [STTrack] = []
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: "playing", object: nil)
@@ -20,6 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         player = AVPlayer.init()
         STSoundCloudPlaylist().fetchPlaylist("https://soundcloud.com/tommcdonald/sets/c-o-s-v", success: { (tracks: [STTrack]) in
+            self.trackList = tracks
+            NSNotificationCenter.defaultCenter().postNotificationName("newTracks", object: nil)
             if(tracks.count > 0) {
                 self.player!.replaceCurrentItemWithPlayerItem(tracks[0].playerItem())
                 self.currentTrack = tracks[0]

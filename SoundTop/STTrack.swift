@@ -9,7 +9,7 @@
 import AVFoundation
 import Cocoa
 
-class STTrack: NSObject {
+class STTrack: NSObject, NSCopying {
     var artworkURL : NSString?
     var title : NSString?
     var artist : NSString?
@@ -38,5 +38,9 @@ class STTrack: NSObject {
         let url = NSURL(string: clientStreamURL)!
         let asset = AVAsset.assetWithURL(url) as AVAsset
         return AVPlayerItem.init(asset: asset)
+    }
+
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        return STTrack(title: title, artist: artist, artworkURL: artworkURL, streamURL: streamURL)
     }
 }
