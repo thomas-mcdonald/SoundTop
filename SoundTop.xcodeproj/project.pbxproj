@@ -16,6 +16,7 @@
 		E226AE831A79A04F00D2B38C /* pause_b3b3b3_20.png in Resources */ = {isa = PBXBuildFile; fileRef = E226AE821A79A04F00D2B38C /* pause_b3b3b3_20.png */; };
 		E226AE851A79A16700D2B38C /* STPlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE841A79A16700D2B38C /* STPlayPauseButton.swift */; };
 		E2C2FC791A80EA110061819A /* STPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C2FC781A80EA110061819A /* STPlaylist.swift */; };
+		E2C2FC7B1A80F32B0061819A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E2C2FC7A1A80F32B0061819A /* README.md */; };
 		E2E36BF71A7C39D100964E29 /* STUpcomingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E36BF61A7C39D100964E29 /* STUpcomingCellView.swift */; };
 		E2FBF62C1A77E369004B46A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FBF62B1A77E369004B46A1 /* AppDelegate.swift */; };
 		E2FBF62E1A77E369004B46A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FBF62D1A77E369004B46A1 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		E226AE821A79A04F00D2B38C /* pause_b3b3b3_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_b3b3b3_20.png; sourceTree = "<group>"; };
 		E226AE841A79A16700D2B38C /* STPlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPlayPauseButton.swift; sourceTree = "<group>"; };
 		E2C2FC781A80EA110061819A /* STPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPlaylist.swift; sourceTree = "<group>"; };
+		E2C2FC7A1A80F32B0061819A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E2E36BF61A7C39D100964E29 /* STUpcomingCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUpcomingCellView.swift; sourceTree = "<group>"; };
 		E2FBF6261A77E369004B46A1 /* SoundTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FBF62A1A77E369004B46A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		E2FBF61D1A77E369004B46A1 = {
 			isa = PBXGroup;
 			children = (
+				E2C2FC7A1A80F32B0061819A /* README.md */,
 				E226AE731A79796600D2B38C /* AVFoundation.framework */,
 				E2FBF6281A77E369004B46A1 /* SoundTop */,
 				E2FBF63B1A77E369004B46A1 /* SoundTopTests */,
@@ -278,6 +281,7 @@
 				E2FBF64F1A793937004B46A1 /* STInfoTextField.swift in Sources */,
 				E2FBF64D1A77F5E5004B46A1 /* STSongInfoView.swift in Sources */,
 				E226AE771A797EF700D2B38C /* STPlayerView.swift in Sources */,
+				E2C2FC7B1A80F32B0061819A /* README.md in Sources */,
 				E2FBF62E1A77E369004B46A1 /* ViewController.swift in Sources */,
 				E2FBF62C1A77E369004B46A1 /* AppDelegate.swift in Sources */,
 				E226AE721A7971D600D2B38C /* STTrack.swift in Sources */,
