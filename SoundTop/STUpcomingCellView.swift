@@ -79,7 +79,7 @@ class STUpcomingCellView: NSView {
 
     func updateData() {
         if track.artworkURL != nil {
-            let request = NSURLRequest(URL: NSURL(string: track.artworkURL!)!)
+            let request = NSURLRequest(URL: NSURL(string: track.badgeAlbumArt!)!)
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
                 if error == nil {
                     let image : NSImage = NSImage(data: data)!

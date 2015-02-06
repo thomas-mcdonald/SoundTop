@@ -46,6 +46,12 @@ class STTrack: NSObject, NSCopying {
         }
     }
 
+    var badgeAlbumArt: NSString? {
+        get {
+            return self.artworkURL?.stringByReplacingOccurrencesOfString("large", withString: "t300x300")
+        }
+    }
+
     init(title : NSString?, artist : NSString?, artworkURL: NSString?, streamURL: NSString?) {
         self.artworkURL = artworkURL
         self.title = title
