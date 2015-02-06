@@ -16,6 +16,7 @@
 		E226AE831A79A04F00D2B38C /* pause_b3b3b3_20.png in Resources */ = {isa = PBXBuildFile; fileRef = E226AE821A79A04F00D2B38C /* pause_b3b3b3_20.png */; };
 		E226AE851A79A16700D2B38C /* STPlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE841A79A16700D2B38C /* STPlayPauseButton.swift */; };
 		E256EE271A8533E1005EE4AE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E256EE261A8533E1005EE4AE /* LICENSE */; };
+		E256EE291A853C59005EE4AE /* STWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256EE281A853C59005EE4AE /* STWindow.swift */; };
 		E2C2FC791A80EA110061819A /* STPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C2FC781A80EA110061819A /* STPlaylist.swift */; };
 		E2C2FC7B1A80F32B0061819A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E2C2FC7A1A80F32B0061819A /* README.md */; };
 		E2E36BF71A7C39D100964E29 /* STUpcomingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E36BF61A7C39D100964E29 /* STUpcomingCellView.swift */; };
@@ -49,6 +50,7 @@
 		E226AE821A79A04F00D2B38C /* pause_b3b3b3_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_b3b3b3_20.png; sourceTree = "<group>"; };
 		E226AE841A79A16700D2B38C /* STPlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPlayPauseButton.swift; sourceTree = "<group>"; };
 		E256EE261A8533E1005EE4AE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E256EE281A853C59005EE4AE /* STWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STWindow.swift; sourceTree = "<group>"; };
 		E2C2FC781A80EA110061819A /* STPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPlaylist.swift; sourceTree = "<group>"; };
 		E2C2FC7A1A80F32B0061819A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E2E36BF61A7C39D100964E29 /* STUpcomingCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUpcomingCellView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				E226AE761A797EF700D2B38C /* STPlayerView.swift */,
 				E226AE841A79A16700D2B38C /* STPlayPauseButton.swift */,
 				E2E36BF61A7C39D100964E29 /* STUpcomingCellView.swift */,
+				E256EE281A853C59005EE4AE /* STWindow.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E256EE291A853C59005EE4AE /* STWindow.swift in Sources */,
 				E2C2FC791A80EA110061819A /* STPlaylist.swift in Sources */,
 				E2FBF64F1A793937004B46A1 /* STInfoTextField.swift in Sources */,
 				E2FBF64D1A77F5E5004B46A1 /* STSongInfoView.swift in Sources */,
