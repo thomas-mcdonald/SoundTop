@@ -15,6 +15,7 @@
 		E226AE811A799E2F00D2B38C /* play_b3b3b3_20.png in Resources */ = {isa = PBXBuildFile; fileRef = E226AE801A799E2F00D2B38C /* play_b3b3b3_20.png */; };
 		E226AE831A79A04F00D2B38C /* pause_b3b3b3_20.png in Resources */ = {isa = PBXBuildFile; fileRef = E226AE821A79A04F00D2B38C /* pause_b3b3b3_20.png */; };
 		E226AE851A79A16700D2B38C /* STPlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226AE841A79A16700D2B38C /* STPlayPauseButton.swift */; };
+		E256EE271A8533E1005EE4AE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E256EE261A8533E1005EE4AE /* LICENSE */; };
 		E2C2FC791A80EA110061819A /* STPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C2FC781A80EA110061819A /* STPlaylist.swift */; };
 		E2C2FC7B1A80F32B0061819A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E2C2FC7A1A80F32B0061819A /* README.md */; };
 		E2E36BF71A7C39D100964E29 /* STUpcomingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E36BF61A7C39D100964E29 /* STUpcomingCellView.swift */; };
@@ -47,6 +48,7 @@
 		E226AE801A799E2F00D2B38C /* play_b3b3b3_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_b3b3b3_20.png; sourceTree = "<group>"; };
 		E226AE821A79A04F00D2B38C /* pause_b3b3b3_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_b3b3b3_20.png; sourceTree = "<group>"; };
 		E226AE841A79A16700D2B38C /* STPlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPlayPauseButton.swift; sourceTree = "<group>"; };
+		E256EE261A8533E1005EE4AE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E2C2FC781A80EA110061819A /* STPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPlaylist.swift; sourceTree = "<group>"; };
 		E2C2FC7A1A80F32B0061819A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E2E36BF61A7C39D100964E29 /* STUpcomingCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUpcomingCellView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		E2FBF61D1A77E369004B46A1 = {
 			isa = PBXGroup;
 			children = (
+				E256EE261A8533E1005EE4AE /* LICENSE */,
 				E2C2FC7A1A80F32B0061819A /* README.md */,
 				E226AE731A79796600D2B38C /* AVFoundation.framework */,
 				E2FBF6281A77E369004B46A1 /* SoundTop */,
@@ -260,6 +263,7 @@
 				E226AE811A799E2F00D2B38C /* play_b3b3b3_20.png in Resources */,
 				E2FBF6331A77E369004B46A1 /* Main.storyboard in Resources */,
 				E226AE831A79A04F00D2B38C /* pause_b3b3b3_20.png in Resources */,
+				E256EE271A8533E1005EE4AE /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
