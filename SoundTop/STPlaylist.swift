@@ -25,6 +25,7 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+import AVFoundation
 import Cocoa
 
 class STPlaylist: NSObject {
@@ -64,7 +65,10 @@ class STPlaylist: NSObject {
                     if let stream = track["stream_url"] as? String {
                         streamURL = stream
                     }
-                    tracks.append(STTrack(title: title, artist: artist, artworkURL: artworkURL, streamURL: streamURL))
+                    if(streamURL != nil) {
+                        tracks.append(STTrack(title: title, artist: artist, artworkURL: artworkURL, streamURL:
+                            streamURL))
+                    }
                 }
             }
         }
@@ -82,5 +86,9 @@ class STPlaylist: NSObject {
     override init() {
         tracks = []
         super.init()
+    }
+
+    func playerItems() -> [AVPlayerItem] {
+        return tracks.map({$0.playerItem()})
     }
 }
