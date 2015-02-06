@@ -43,7 +43,6 @@ class STPlayPauseButton: NSControl {
     }
 
     func setup() {
-        NSLog("setting up")
         let playImage = NSImage(byReferencingFile: NSBundle.mainBundle().pathForImageResource("play_b3b3b3_20.png")!)
         let pauseImage = NSImage(byReferencingFile: NSBundle.mainBundle().pathForImageResource("pause_b3b3b3_20.png")!)
 
@@ -69,17 +68,13 @@ class STPlayPauseButton: NSControl {
 
     override func mouseDown(e: NSEvent) {
         var keepOn = true
-        NSLog("highlighting")
-        
+
         while(keepOn) {
             let mask = NSEventMask.LeftMouseUpMask
             let event = self.window!.nextEventMatchingMask(Int(mask.rawValue))
             nextState()
-            NSLog("moving on")
             keepOn = false
         }
-        
-        NSLog("done")
     }
 
     private func nextState() {

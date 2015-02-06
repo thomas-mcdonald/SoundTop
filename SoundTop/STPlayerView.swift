@@ -43,7 +43,6 @@ class STPlayerView: NSView {
     }
 
     func setup() {
-        NSLog("setting up STPlayerView")
         let layer = CALayer.init()
         self.wantsLayer = true
         self.layer = layer
