@@ -33,13 +33,13 @@ class STPlaylist: NSObject {
 
     // create from a playlist
     convenience init?(playlistData: NSData) {
-        self.init()
-        var jsonError : NSError?
-        var jsonOption: AnyObject! = NSJSONSerialization.JSONObjectWithData(playlistData, options: NSJSONReadingOptions(0), error: &jsonError)
-
-        if(jsonError != nil) {
-            return nil
-        }
+      self.init()
+      var jsonOption : AnyObject
+      do {
+          jsonOption = try NSJSONSerialization.JSONObjectWithData(playlistData, options: NSJSONReadingOptions.MutableContainers) as AnyObject!
+      } catch let _ as NSError {
+        return nil
+      }
 
         // array for storing the track information for the playlists
         var ts : [STTrack] = []
@@ -78,7 +78,7 @@ class STPlaylist: NSObject {
     convenience init?(likesData: NSData) {
         self.init()
         var jsonError : NSError?
-        var jsonOption: AnyObject! = NSJSONSerialization.JSONObjectWithData(likesData, options: NSJSONReadingOptions(0), error: &jsonError)
+//        var jsonOption: AnyObject! = NSJSONSerialization.JSONObjectWithData(likesData, options: NSJSONReadingOptions(0), error: &jsonError)
         // TODO: implement support for user likes
         return nil
     }

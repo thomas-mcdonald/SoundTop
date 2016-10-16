@@ -28,7 +28,8 @@
 import Cocoa
 
 class STWindow: NSWindow {
-    var isMovableByWindowBackground: Bool {
-        get { return true }
-    }
+  override var movableByWindowBackground: Bool {
+    get { return true }
+    set {}
+  }
 }

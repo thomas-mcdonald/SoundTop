@@ -40,9 +40,9 @@ class ViewController: NSViewController {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTrack", name: "newTrack", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playing", name: "playing", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "paused", name: "paused", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.updateTrack), name: "newTrack", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.playing), name: "playing", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.paused), name: "paused", object: nil)
     }
 
     override func viewDidLoad() {
@@ -87,9 +87,9 @@ class ViewController: NSViewController {
     }
 
     func updateTrack() {
-        let delegate = NSApplication.sharedApplication().delegate as AppDelegate
+        let delegate = NSApplication.sharedApplication().delegate as! AppDelegate
         let track = delegate.currentTrack
-        let url = NSURL(string: track!.largeAlbumArt!)
+        let url = NSURL(string: track!.largeAlbumArt! as String)
         albumView.fetchImage(url!)
         songInfoView.updateTrack(track!)
     }

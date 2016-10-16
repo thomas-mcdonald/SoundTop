@@ -60,18 +60,18 @@ class STPlayPauseButton: NSControl {
 
         // add constraints
         let viewsDict = ["pauseImageView": pauseImageView, "playImageView": playImageView]
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[playImageView]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[pauseImageView]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[playImageView]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[pauseImageView]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[playImageView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[pauseImageView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[playImageView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[pauseImageView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDict))
     }
 
     override func mouseDown(e: NSEvent) {
         var keepOn = true
 
         while(keepOn) {
-            let mask = NSEventMask.LeftMouseUpMask
-            let event = self.window!.nextEventMatchingMask(Int(mask.rawValue))
+            let mask = NSEventMask.LeftMouseUp
+            let event = self.window!.nextEventMatchingMask(NSEventMask(rawValue: UInt64(Int(mask.rawValue))))
             nextState()
             keepOn = false
         }

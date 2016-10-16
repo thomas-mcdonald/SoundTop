@@ -31,12 +31,13 @@ class STSoundCloudPlaylist: NSObject {
     private let clientId = "027aa73b22641da241a74cfdd3c5210b"
 
     func fetchPlaylist(playlistURL: NSString, success: (STPlaylist) -> ()) {
-        let url = NSURL(string: resolverURL(playlistURL))
+        let url = NSURL(string: resolverURL(playlistURL) as String)
         let request = NSURLRequest(URL: url!)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response: NSURLResponse!, data: NSData!, error: NSError!) in
+
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) in
 
             // hit callback
-            let playlist: STPlaylist? = STPlaylist(playlistData: data)
+            let playlist: STPlaylist? = STPlaylist(playlistData: data!)
             if(playlist == nil) {
                 // failure callback
             } else {

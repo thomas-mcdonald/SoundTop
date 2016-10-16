@@ -35,8 +35,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var playlist: STPlaylist?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: "playing", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pause", name: "paused", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.play), name: "playing", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.pause), name: "paused", object: nil)
 
         player = AVQueuePlayer.init()
         STSoundCloudPlaylist().fetchPlaylist("https://soundcloud.com/tommcdonald/sets/c-o-s-v", success: { (playlist: STPlaylist) in

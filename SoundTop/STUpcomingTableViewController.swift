@@ -33,11 +33,11 @@ class STUpcomingTableViewController: NSObject, NSTableViewDelegate, NSTableViewD
 
     override init() {
         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateData", name: "newTracks", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(STUpcomingTableViewController.updateData), name: "newTracks", object: nil)
     }
 
     func updateData() {
-        let delegate = NSApplication.sharedApplication().delegate as AppDelegate
+        let delegate = NSApplication.sharedApplication().delegate as! AppDelegate
         tracks = delegate.playlist!.tracks
         tableView.reloadData()
     }

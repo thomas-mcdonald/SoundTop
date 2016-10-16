@@ -51,14 +51,14 @@ class STAlbumView: NSImageView {
 
     func fetchImage(url : NSURL) {
         let request = NSURLRequest(URL: url) // TODO: unwrap optional properly
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse?, data: NSData?,error: NSError?) -> Void in
             if error == nil {
-                let image : NSImage = NSImage(data: data)!
+                let image : NSImage = NSImage(data: data!)!
                 self.image = image
                 self.needsDisplay = true
             }
             else {
-                println("Error: \(error.localizedDescription)")
+                self.print("Error: \(error!.localizedDescription)")
             }
         })
     }
@@ -68,7 +68,7 @@ class STAlbumView: NSImageView {
         if(trackingArea != nil) {
             removeTrackingArea(trackingArea!)
         }
-        let opts = NSTrackingAreaOptions.MouseEnteredAndExited | NSTrackingAreaOptions.ActiveAlways
+        let opts : NSTrackingAreaOptions = [.MouseEnteredAndExited, .ActiveAlways]
         trackingArea = NSTrackingArea.init(rect: self.bounds, options: opts, owner: nextResponder, userInfo: nil)
         addTrackingArea(trackingArea!)
     }

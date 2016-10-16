@@ -38,13 +38,13 @@ class STInfoTextField: NSTextField {
         setup()
     }
     
-    override init() {
-        super.init()
-        setup()
-    }
+//    init() {
+//        super.init(coder: NSCoder.init())
+//        setup()
+//    }
 
     func setup() {
-        self.alignment = NSTextAlignment.CenterTextAlignment
+        self.alignment = NSTextAlignment.Center
         self.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0)
         self.bordered = false
         self.selectable = false

@@ -68,11 +68,11 @@ class STSongInfoView: NSView {
         addConstraint(NSLayoutConstraint(item: songTitleView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: songArtistView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
         // layout views vertically
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-8-[songTitleView]-0-[songArtistView]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-8-[songTitleView]-0-[songArtistView]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDict))
     }
 
     func updateTrack(track: STTrack) {
-        songTitleView.stringValue = track.title!
-        songArtistView.stringValue = track.artist!
+        songTitleView.stringValue = track.title! as String
+        songArtistView.stringValue = track.artist! as String
     }
 }

@@ -36,7 +36,7 @@ class STTrack: NSObject, NSCopying {
 
     private var clientStreamURL : NSString {
         get {
-            return self.streamURL! + "?client_id=027aa73b22641da241a74cfdd3c5210b"
+            return (self.streamURL! as String) + "?client_id=027aa73b22641da241a74cfdd3c5210b"
         }
     }
 
@@ -60,8 +60,8 @@ class STTrack: NSObject, NSCopying {
     }
 
     func playerItem() -> AVPlayerItem {
-        let url = NSURL(string: clientStreamURL)!
-        let asset = AVAsset.assetWithURL(url) as AVAsset
+        let url = NSURL(string: clientStreamURL as String)!
+        let asset = AVAsset.init(URL: url)
         return AVPlayerItem.init(asset: asset)
     }
 
